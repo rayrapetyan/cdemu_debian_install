@@ -54,7 +54,7 @@ RUN dpkg-buildpackage -b -uc -tc
 RUN mkdir /build \
     && cp /cdemu/*.deb /build
 
-FROM debian:bullseye
+FROM debian:stable-slim
 
 COPY --from=builder \
         /build/vhba-dkms_20211218-1_all.deb \
@@ -65,5 +65,3 @@ COPY --from=builder \
         /build/
 
 ENTRYPOINT ['tail', '-f', '/dev/null']
-
-

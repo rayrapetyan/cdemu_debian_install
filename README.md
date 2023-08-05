@@ -20,7 +20,8 @@ This will create a local copy of the `cdemu` repository on your system.
 
 ## Step 2: Obtain Your Debian Version Codename
 
-To build the `cdemu` package, you need to know the codename of your Debian distribution. To find it, open a terminal and run the following command:
+To build the `cdemu` package, you need to know the codename of your Debian distribution. To find it, open a terminal and 
+run the following command:
 
     lsb_release -cs
 
@@ -28,7 +29,8 @@ Note down the codename as you'll need it in the next step.
 
 ## Step 3: Copy the Dockerfile and Build the Docker Image
 
-Copy the provided Dockerfile into the cloned `cdemu` folder. Then, open the Dockerfile in a text editor and update the base image's codename with the one you obtained in Step 2.
+Copy the provided Dockerfile into the cloned `cdemu` folder. Then, open the Dockerfile in a text editor and update the 
+builder base image's codename (first line in the Dockerfile) with the one you obtained in Step 2.
 
 Navigate to the `cdemu` folder in the terminal and build the Docker image using the following command:
 
@@ -36,7 +38,7 @@ Navigate to the `cdemu` folder in the terminal and build the Docker image using 
 
 This command will create a Docker image with the `cdemu` Debian packages (deb-files).
 
-## Step 4: Copy cdemu deb files to Your Local Machine
+## Step 4: Copy `cdemu` deb files to Your Local Machine
 
 Next, copy the `cdemu` deb files from the Docker image to your local machine. Perform the following steps:
 
@@ -62,8 +64,10 @@ This command will install all the required `cdemu` packages on your Debian syste
 
 ## Step 6: Run the `cdemu` GUI
 
-With `cdemu` installed, you can now run the `gcdemu` command to open the graphical user interface (GUI) for managing virtual CD/DVD drives:
+With `cdemu` installed, you can now run the `gcdemu` command to open the graphical user interface (GUI) for managing 
+virtual CD/DVD drives:
 
     gcdemu
 
-You're all set! You have successfully built and installed `cdemu` on your Debian system using Docker. Now you can use `gcdemu` to mount and manage disc images with ease. Enjoy using `cdemu` for a seamless virtual disc experience!
+You're all set! You have successfully built and installed `cdemu` on your Debian system using Docker. Now you can use 
+`gcdemu` to mount and manage disc images with ease. Enjoy using `cdemu` for a seamless virtual disc experience!
