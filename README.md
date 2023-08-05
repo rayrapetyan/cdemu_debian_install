@@ -51,14 +51,9 @@ The `cdemu` deb files are now copied into the ./build folder on your local machi
 
 ## Step 5: Install `cdemu` deb Packages
 
-To install `cdemu` on your system use the following apt install command:
+To install `cdemu` on your system use the following command:
 
-    sudo apt install \
-        ./build/vhba-dkms_20211218-1_all.deb \
-        ./build/libmirage11_3.2.6-1_amd64.deb \
-        ./build/cdemu-daemon_3.2.6-1_amd64.deb \
-        ./build/cdemu-client_3.2.5-1_all.deb \
-        ./build/gcdemu_3.2.6-1_all.deb
+    sudo apt install ./build/*.deb
 
 This command will install all the required `cdemu` packages on your Debian system.
 

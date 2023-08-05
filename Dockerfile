@@ -35,9 +35,9 @@ RUN dpkg-buildpackage -b -uc -tc
 
 # cdemu-daemon builder requires libmirage to be present in the system
 RUN apt install -y \
-        /cdemu/libmirage11_3.2.6-1_amd64.deb \
-        /cdemu/gir1.2-mirage-3.2_3.2.6-1_amd64.deb \
-        /cdemu/libmirage11-dev_3.2.6-1_amd64.deb
+        /cdemu/libmirage11_*.deb \
+        /cdemu/gir*.deb \
+        /cdemu/libmirage11-dev*.deb
 
 WORKDIR /cdemu/cdemu-daemon
 RUN dpkg-buildpackage -b -uc -tc
@@ -57,11 +57,13 @@ RUN mkdir /build \
 FROM debian:stable-slim
 
 COPY --from=builder \
-        /build/vhba-dkms_20211218-1_all.deb \
-        /build/libmirage11_3.2.6-1_amd64.deb \
-        /build/cdemu-daemon_3.2.6-1_amd64.deb \
-        /build/cdemu-client_3.2.5-1_all.deb \
-        /build/gcdemu_3.2.6-1_all.deb \
+        /build/vhba-dkms*.deb \
+        /build/libmirage_*.deb \
+        /build/cdemu-daemon_*.deb \
+        /build/cdemu-client_*.deb \
+        /build/gcdemu*.deb \
+        /build/gir*.deb \
+        /build/image-analyzer*.deb \
         /build/
 
 ENTRYPOINT ['tail', '-f', '/dev/null']
